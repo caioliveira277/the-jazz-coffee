@@ -1,0 +1,65 @@
+@import "./variables";
+footer {
+  background: $themeWhite;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  .container {
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      & > :nth-child(2) {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        &::before, &::after {
+          content: '';
+          margin: 0 20px;
+          display: inline-block;
+          border-radius: 5px;
+          width: 100%;
+          background: #6B686355;
+          height: 1px;
+        }
+      }
+      nav {
+        ul {
+          list-style: none;
+          text-align: center;
+          li {
+            margin: 15px 0;
+            a {
+              text-decoration: none;
+              font: 100 1.75rem "Roboto Slab";
+              color: $themeBlue;
+              &:hover {
+                color: darken($themeBlue, 30%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  hr {
+    margin-top: 15px;
+    width: 50%;
+    background: #6B686355;
+    border-style: none;
+    height: 1px;
+  }
+  small {
+    font: 400 1rem "Roboto Slab";
+    color: #575450;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    i {
+      margin-left: 10px;
+    }
+  }
+}

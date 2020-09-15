@@ -1,0 +1,11 @@
+@use "./base";
+
+/* parts */
+@use "./header";
+@use "./footer";
+
+/* sections */
+@use "./start";
+@use "./presentations";
+@use "./tickets";
+@use "./about";

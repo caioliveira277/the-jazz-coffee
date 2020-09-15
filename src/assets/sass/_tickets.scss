@@ -1,0 +1,37 @@
+@import "./variables";
+section.tickets {
+  background: $themeBlue url("../images/logo-event.svg");
+  display: flex;
+  justify-content: center;
+  .container {
+    justify-content: center;
+    color: $themeWhite;
+    position: relative;
+    .mask {
+      position: absolute;
+      width: 100%;
+      background: linear-gradient(to right, #ffffff25 0%, #ffffff25 60%, transparent 60%, transparent 100%);
+      backdrop-filter: blur(2px);
+      height: 100%;
+      z-index: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      img {
+        margin-top: 200px;
+      }
+    }
+    em {
+      z-index: 1;
+      margin-top: 80px;
+      h2 {
+        font: 1.9rem "Abril Fatface";
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      h3 {
+        font-family: "Roboto Slab";
+      }
+    }
+  }
+}

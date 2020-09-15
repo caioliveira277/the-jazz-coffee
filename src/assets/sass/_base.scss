@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Slab:wght@300;400;700&display=swap");
+@import "./breakpoints";
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+em {
+  font-style: normal;
+}
+button {
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+p {
+  font-family: "Roboto Slab";
+}
+h1 {
+  font-size: 7rem;
+  font-weight: normal;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+section {
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+  @include desktop{
+    max-width: $xl;
+  }
+}
+
