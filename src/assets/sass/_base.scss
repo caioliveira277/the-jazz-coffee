@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  scroll-behavior: smooth;
+}
 em {
   font-style: normal;
 }

@@ -16,3 +16,6 @@ import "./assets/images/logo-apresentation-event.svg";
 import "./assets/images/icon-btn-control.svg";
 import "./assets/images/logo-event-footer.svg";
 import "./assets/images/logo-fav-footer.svg";
+
+/* scripts */
+// import "./assets/js/scroll";
