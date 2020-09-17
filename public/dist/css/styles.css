@@ -1,0 +1,401 @@
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Slab:wght@300;400;700&display=swap);
+/* breakpoints */
+/* mixins */
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.2);
+}
+
+p {
+  font-family: "Roboto Slab";
+}
+
+h1 {
+  font-size: 7rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* colors */
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-50%);
+  left: 50%;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  z-index: 10;
+  background: rgba(246, 243, 232, 0.8);
+  backdrop-filter: blur(3px);
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+header nav ul li {
+  margin: 0 30px;
+}
+header nav ul li a {
+  color: #373A43;
+  font: 300 1.5rem "Roboto Slab";
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: black;
+}
+header nav ul li.active a {
+  font-weight: bold;
+}
+header nav ul li.active a::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  border-radius: 10px;
+  background: currentColor;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* colors */
+footer {
+  background: #F6F3E8;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+footer .container .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+footer .container .flex > :nth-child(2) {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+footer .container .flex > :nth-child(2)::before, footer .container .flex > :nth-child(2)::after {
+  content: "";
+  margin: 0 20px;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100%;
+  background: #6B686355;
+  height: 1px;
+}
+footer .container .flex nav ul {
+  list-style: none;
+  text-align: center;
+}
+footer .container .flex nav ul li {
+  margin: 15px 0;
+}
+footer .container .flex nav ul li a {
+  text-decoration: none;
+  font: 100 1.75rem "Roboto Slab";
+  color: #373A43;
+}
+footer .container .flex nav ul li a:hover {
+  color: black;
+}
+footer hr {
+  margin-top: 15px;
+  width: 50%;
+  background: #6B686355;
+  border-style: none;
+  height: 1px;
+}
+footer small {
+  font: 400 1rem "Roboto Slab";
+  color: #575450;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+footer small i {
+  margin-left: 10px;
+}
+
+/* colors */
+section.start {
+  width: 100%;
+  background: #F6F3E8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+section.start .container {
+  align-items: center;
+  justify-content: space-between;
+}
+section.start .container em h1, section.start .container em h2 {
+  color: #575450;
+}
+section.start .container em h1 {
+  font-family: "Abril Fatface";
+}
+section.start .container em h2 {
+  font-family: "Roboto Slab";
+  font-size: 1.4rem;
+}
+section.start .container em hr {
+  width: 50px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  border-color: #575450;
+}
+section.start .container figure {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+section.start .container figure img {
+  display: block;
+}
+section.start .container figure img.part1 {
+  transform: translate(103px, 15px);
+}
+section.start .container figure img.part2 {
+  transform: translate(110px, 10px);
+}
+section.start .container figure img.part4 {
+  transform: translate(-50px, -5px);
+}
+section.start .btn-arrow-down {
+  border: none;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: downIndicate 0.9s ease-in-out alternate infinite;
+}
+
+@keyframes downIndicate {
+  from {
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    transform: translate3d(0, 20px, 0);
+  }
+}
+/* colors */
+section.presentations {
+  background: #F6F3E8;
+  display: flex;
+  justify-content: center;
+}
+section.presentations .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #575450;
+}
+section.presentations .container em h2 {
+  font: 1.9rem "Abril Fatface";
+  text-align: center;
+  margin-bottom: 5px;
+}
+section.presentations .container em h3 {
+  font-family: "Roboto Slab";
+}
+section.presentations .container .slides {
+  margin-top: 100px;
+}
+section.presentations .container .slides .slide-item {
+  background: linear-gradient(to right, transparent 0%, transparent 30%, #fafafa 30%, #fafafa);
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  position: relative;
+}
+section.presentations .container .slides .slide-item .slide-info {
+  max-width: 500px;
+  margin: 0 30px 0 80px;
+}
+section.presentations .container .slides .slide-item .slide-info h2 {
+  font-family: "Abril Fatface";
+  text-align: center;
+  margin-bottom: 25px;
+}
+section.presentations .container .slides .slide-item .slide-info p {
+  line-height: 32px;
+  font-size: 1.13rem;
+}
+section.presentations .container .slides .slide-item .logomarca {
+  position: absolute;
+  right: -103px;
+  bottom: -100px;
+}
+section.presentations .container .controls {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+section.presentations .container .controls button {
+  border: none;
+  background: transparent;
+  margin: 0 15px;
+}
+section.presentations .container .controls .pages-points {
+  display: flex;
+  align-items: center;
+}
+section.presentations .container .controls .pages-points span {
+  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  background: rgba(87, 84, 80, 0.2);
+}
+section.presentations .container .controls .pages-points span.active {
+  background: rgba(87, 84, 80, 0.6);
+}
+
+/* colors */
+section.tickets {
+  background: #373A43 url(images/logo-event.svg);
+  display: flex;
+  justify-content: center;
+}
+section.tickets .container {
+  justify-content: center;
+  color: #F6F3E8;
+  position: relative;
+}
+section.tickets .container .mask {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to right, #ffffff25 0%, #ffffff25 60%, transparent 60%, transparent 100%);
+  backdrop-filter: blur(2px);
+  height: 100%;
+  z-index: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+}
+section.tickets .container .mask img {
+  margin-top: 200px;
+}
+section.tickets .container em {
+  z-index: 1;
+  margin-top: 80px;
+}
+section.tickets .container em h2 {
+  font: 1.9rem "Abril Fatface";
+  text-align: center;
+  margin-bottom: 5px;
+}
+section.tickets .container em h3 {
+  font-family: "Roboto Slab";
+}
+
+/* colors */
+section.about {
+  background: #F6F3E8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+section.about .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #575450;
+}
+section.about .container em {
+  margin-top: 80px;
+}
+section.about .container em h2 {
+  font: 1.9rem "Abril Fatface";
+  text-align: center;
+  margin-bottom: 5px;
+}
+section.about .container em h3 {
+  font-family: "Roboto Slab";
+}
+section.about .container .slides {
+  margin-top: 50px;
+}
+section.about .container .slides h2 {
+  font: normal 5rem "Abril Fatface";
+  text-align: center;
+}
+section.about .container .slides .infos {
+  display: flex;
+  margin-top: 40px;
+}
+section.about .container .slides .infos p {
+  margin-bottom: 20px;
+  line-height: 32px;
+}
+section.about .container .slides .infos img {
+  margin-top: 80px;
+  margin-right: 50px;
+}
+
+/* parts */
+/* sections */
