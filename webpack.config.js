@@ -5,16 +5,13 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: path.resolve("src", "index.js"),
-  devServer: {
-    contentBase: "./public",
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve("src", "assets/index.html"),
+      template: path.resolve("src", "index.html"),
     }),
     new MiniCssExtractPlugin({
-      filename: "css/styles.css",
+      filename: "public/assets/css/styles.css",
     }),
   ],
   module: {
@@ -34,7 +31,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "images",
+              outputPath: "public/assets/images",
             },
           },
         ],
@@ -48,7 +45,7 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
   },
   output: {
-    filename: "js/app.js",
-    path: path.resolve("public", "dist"),
+    filename: "public/assets/js/app.js",
+    path: path.resolve(__dirname),
   },
 };

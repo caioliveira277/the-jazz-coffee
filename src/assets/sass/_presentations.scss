@@ -3,76 +3,67 @@ section.presentations {
   background: $themeWhite;
   display: flex;
   justify-content: center;
+  position: relative;
+  .logomarca {
+    position: absolute;
+    right: 30px;
+    bottom: 70px;
+    z-index: 10;
+  }
   .container {
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow: hidden;
     color: $themeBrown;
+    position: relative;
     em {
+      margin-top: 80px;
+      width: 100%;
       h2 {
         font: 1.9rem "Abril Fatface";
         text-align: center;
         margin-bottom: 5px;
       }
       h3 {
+        text-align: center;
         font-family: "Roboto Slab";
       }
     }
     .slides {
-      margin-top: 100px;
+      display: block;
+      width: 100%;
+      position: relative;
+      margin-bottom: 35px;
       .slide-item {
-        background: linear-gradient(
-          to right,
-          transparent 0%,
-          transparent 30%,
-          #fafafa 30%,
-          #fafafa
-        );
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
-        position: relative;
-        .slide-info {
-          max-width: 500px;
-          margin: 0 30px 0 80px;
-          h2 {
-            font-family: "Abril Fatface";
-            text-align: center;
-            margin-bottom: 25px;
-          }
-          p {
-            line-height: 32px;
-            font-size: 1.13rem;
-          }
-        }
-        .logomarca {
-          position: absolute;
-          right: -103px;
-          bottom: -100px;
-        }
-      }
-    }
-    .controls {
-      display: flex;
-      align-items: center;
-      margin-top: 60px;
-      button {
-        border: none;
-        background: transparent;
-        margin: 0 15px;
-      }
-      .pages-points {
-        display: flex;
-        align-items: center;
-        span {
-          margin: 0 5px;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          display: block;
-          background: rgba(#575450, 0.2);
-          &.active {
-            background: rgba(#575450, 0.6);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        .slide-content{
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            transparent 30%,
+            #fafafa 30%,
+            #fafafa
+          );
+          display: flex;
+          justify-content: space-between;
+          padding: 50px 0;
+          position: relative;
+          .slide-info {
+            max-width: 500px;
+            margin: 0 30px 0 80px;
+            h2 {
+              font-family: "Abril Fatface";
+              text-align: center;
+              margin-bottom: 25px;
+            }
+            p {
+              line-height: 32px;
+              font-size: 1.13rem;
+            }
           }
         }
       }

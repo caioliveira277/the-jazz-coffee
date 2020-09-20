@@ -1,14 +1,17 @@
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 section.about {
   background: $themeWhite;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   .container {
-    flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     color: $themeBrown;
+    overflow: hidden;
     em {
       margin-top: 80px;
       h2 {
@@ -20,24 +23,53 @@ section.about {
         font-family: "Roboto Slab";
       }
     }
+    svg {
+      pointer-events: none;
+    }
     .slides {
-      margin-top: 50px;
-      h2 {
-        font: normal 5rem "Abril Fatface";
-        text-align: center;
-      }
-      .infos {
-        display: flex;
-        margin-top: 40px;
-        p {
-          margin-bottom: 20px;
-          line-height: 32px;
+      display: block;
+      width: 100%;
+      position: relative;
+      height: 720px;
+      .slide-item {
+        margin-top: 50px;
+        position: absolute;
+        left: 0;
+        width:100%;
+        &.two {
+          transform: translateX(10%);
+          opacity: 0;
+          .infos img {
+            margin-top: 0;
+          }
         }
-        img {
-          margin-top: 80px;
-          margin-right: 50px;
+        h2 {
+          font: normal 5rem "Abril Fatface", serif;
+          text-align: center;
+        }
+        .title-logo {
+          font-family: 'Bungee Shade', sans-serif;
+        }
+        .infos {
+          display: flex;
+          margin-top: 40px;
+          p {
+            margin-bottom: 20px;
+            line-height: 32px;
+          }
+          img {
+            margin-top: 80px;
+            margin-right: 50px;
+          }
         }
       }
+    }
+  }
+  .controls {
+    z-index: 10;
+    cursor: pointer;
+    a {
+      pointer-events: none;
     }
   }
 }

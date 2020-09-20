@@ -1,24 +1,36 @@
 @import "./variables";
 section.tickets {
-  background: $themeBlue url("../images/logo-event.svg");
+  background: $themeBlue;
   display: flex;
   justify-content: center;
   .container {
+    background: linear-gradient(to right, #ffffff25 0%, #ffffff25 50%, $themeBlue 50%, $themeBlue 100%);
     justify-content: center;
     color: $themeWhite;
     position: relative;
+    flex-wrap: wrap;
     .mask {
-      position: absolute;
-      width: 100%;
-      background: linear-gradient(to right, #ffffff25 0%, #ffffff25 60%, transparent 60%, transparent 100%);
-      backdrop-filter: blur(2px);
-      height: 100%;
-      z-index: 0;
-      left: 0;
       display: flex;
       justify-content: space-around;
-      img {
-        margin-top: 200px;
+      width: 100%;
+      .ticket-preview {
+        display: flex;
+        flex-direction: column;
+        svg {
+          pointer-events: none;
+        }
+        .ticket.active {
+          transform: rotate(5deg);
+        }
+        .ticket:not(.active) {
+          cursor: pointer;
+          transition: all 200ms;
+          &.green, &.red, &.classic{
+            &:hover {
+              transform: rotate(2deg);
+            }
+          }
+        }
       }
     }
     em {
@@ -31,6 +43,15 @@ section.tickets {
       }
       h3 {
         font-family: "Roboto Slab";
+      }
+    }
+    .block-information{
+      overflow: hidden;
+      width: 315px;
+      img {
+        cursor: pointer;
+        z-index: 0;
+        position: absolute;
       }
     }
   }

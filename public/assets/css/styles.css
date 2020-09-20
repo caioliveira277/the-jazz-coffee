@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Slab:wght@300;400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap);
+/* colors */
 /* breakpoints */
 /* mixins */
+/* colors */
 * {
   padding: 0;
   margin: 0;
@@ -12,6 +15,7 @@
 
 body {
   scroll-behavior: smooth;
+  background: #F6F3E8;
 }
 
 em {
@@ -196,7 +200,7 @@ section.start .container em h2 {
   font-size: 1.4rem;
 }
 section.start .container em hr {
-  width: 50px;
+  animation: widthAnimation 0.8s forwards;
   margin-bottom: 10px;
   margin-top: -10px;
   border-color: #575450;
@@ -210,13 +214,16 @@ section.start .container figure img {
   display: block;
 }
 section.start .container figure img.part1 {
-  transform: translate(103px, 15px);
+  transform: translate(135px, 0px);
 }
 section.start .container figure img.part2 {
-  transform: translate(110px, 10px);
+  transform: translate(126px, 0px);
+}
+section.start .container figure img.part3 {
+  transform: translate(0px);
 }
 section.start .container figure img.part4 {
-  transform: translate(-50px, -5px);
+  transform: translate(-65px, 0px);
 }
 section.start .btn-arrow-down {
   border: none;
@@ -241,17 +248,38 @@ section.start .btn-arrow-down {
     transform: translate3d(0, 20px, 0);
   }
 }
+@keyframes widthAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
+  }
+}
 /* colors */
 section.presentations {
   background: #F6F3E8;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+section.presentations .logomarca {
+  position: absolute;
+  right: 30px;
+  bottom: 70px;
+  z-index: 10;
 }
 section.presentations .container {
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: hidden;
   color: #575450;
+  position: relative;
+}
+section.presentations .container em {
+  margin-top: 80px;
+  width: 100%;
 }
 section.presentations .container em h2 {
   font: 1.9rem "Abril Fatface";
@@ -259,86 +287,76 @@ section.presentations .container em h2 {
   margin-bottom: 5px;
 }
 section.presentations .container em h3 {
+  text-align: center;
   font-family: "Roboto Slab";
 }
 section.presentations .container .slides {
-  margin-top: 100px;
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 35px;
 }
 section.presentations .container .slides .slide-item {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+section.presentations .container .slides .slide-item .slide-content {
   background: linear-gradient(to right, transparent 0%, transparent 30%, #fafafa 30%, #fafafa);
   display: flex;
   justify-content: space-between;
   padding: 50px 0;
   position: relative;
 }
-section.presentations .container .slides .slide-item .slide-info {
+section.presentations .container .slides .slide-item .slide-content .slide-info {
   max-width: 500px;
   margin: 0 30px 0 80px;
 }
-section.presentations .container .slides .slide-item .slide-info h2 {
+section.presentations .container .slides .slide-item .slide-content .slide-info h2 {
   font-family: "Abril Fatface";
   text-align: center;
   margin-bottom: 25px;
 }
-section.presentations .container .slides .slide-item .slide-info p {
+section.presentations .container .slides .slide-item .slide-content .slide-info p {
   line-height: 32px;
   font-size: 1.13rem;
-}
-section.presentations .container .slides .slide-item .logomarca {
-  position: absolute;
-  right: -103px;
-  bottom: -100px;
-}
-section.presentations .container .controls {
-  display: flex;
-  align-items: center;
-  margin-top: 60px;
-}
-section.presentations .container .controls button {
-  border: none;
-  background: transparent;
-  margin: 0 15px;
-}
-section.presentations .container .controls .pages-points {
-  display: flex;
-  align-items: center;
-}
-section.presentations .container .controls .pages-points span {
-  margin: 0 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: block;
-  background: rgba(87, 84, 80, 0.2);
-}
-section.presentations .container .controls .pages-points span.active {
-  background: rgba(87, 84, 80, 0.6);
 }
 
 /* colors */
 section.tickets {
-  background: #373A43 url(images/logo-event.svg);
+  background: #373A43;
   display: flex;
   justify-content: center;
 }
 section.tickets .container {
+  background: linear-gradient(to right, #ffffff25 0%, #ffffff25 50%, #373A43 50%, #373A43 100%);
   justify-content: center;
   color: #F6F3E8;
   position: relative;
+  flex-wrap: wrap;
 }
 section.tickets .container .mask {
-  position: absolute;
-  width: 100%;
-  background: linear-gradient(to right, #ffffff25 0%, #ffffff25 60%, transparent 60%, transparent 100%);
-  backdrop-filter: blur(2px);
-  height: 100%;
-  z-index: 0;
-  left: 0;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
-section.tickets .container .mask img {
-  margin-top: 200px;
+section.tickets .container .mask .ticket-preview {
+  display: flex;
+  flex-direction: column;
+}
+section.tickets .container .mask .ticket-preview svg {
+  pointer-events: none;
+}
+section.tickets .container .mask .ticket-preview .ticket.active {
+  transform: rotate(5deg);
+}
+section.tickets .container .mask .ticket-preview .ticket:not(.active) {
+  cursor: pointer;
+  transition: all 200ms;
+}
+section.tickets .container .mask .ticket-preview .ticket:not(.active).green:hover, section.tickets .container .mask .ticket-preview .ticket:not(.active).red:hover, section.tickets .container .mask .ticket-preview .ticket:not(.active).classic:hover {
+  transform: rotate(2deg);
 }
 section.tickets .container em {
   z-index: 1;
@@ -352,8 +370,16 @@ section.tickets .container em h2 {
 section.tickets .container em h3 {
   font-family: "Roboto Slab";
 }
+section.tickets .container .block-information {
+  overflow: hidden;
+  width: 315px;
+}
+section.tickets .container .block-information img {
+  cursor: pointer;
+  z-index: 0;
+  position: absolute;
+}
 
-/* colors */
 section.about {
   background: #F6F3E8;
   display: flex;
@@ -361,10 +387,11 @@ section.about {
   align-items: flex-start;
 }
 section.about .container {
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   color: #575450;
+  overflow: hidden;
 }
 section.about .container em {
   margin-top: 80px;
@@ -377,24 +404,53 @@ section.about .container em h2 {
 section.about .container em h3 {
   font-family: "Roboto Slab";
 }
-section.about .container .slides {
-  margin-top: 50px;
+section.about .container svg {
+  pointer-events: none;
 }
-section.about .container .slides h2 {
-  font: normal 5rem "Abril Fatface";
+section.about .container .slides {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 720px;
+}
+section.about .container .slides .slide-item {
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+section.about .container .slides .slide-item.two {
+  transform: translateX(10%);
+  opacity: 0;
+}
+section.about .container .slides .slide-item.two .infos img {
+  margin-top: 0;
+}
+section.about .container .slides .slide-item h2 {
+  font: normal 5rem "Abril Fatface", serif;
   text-align: center;
 }
-section.about .container .slides .infos {
+section.about .container .slides .slide-item .title-logo {
+  font-family: "Bungee Shade", sans-serif;
+}
+section.about .container .slides .slide-item .infos {
   display: flex;
   margin-top: 40px;
 }
-section.about .container .slides .infos p {
+section.about .container .slides .slide-item .infos p {
   margin-bottom: 20px;
   line-height: 32px;
 }
-section.about .container .slides .infos img {
+section.about .container .slides .slide-item .infos img {
   margin-top: 80px;
   margin-right: 50px;
+}
+section.about .controls {
+  z-index: 10;
+  cursor: pointer;
+}
+section.about .controls a {
+  pointer-events: none;
 }
 
 /* parts */

@@ -22,7 +22,7 @@ section.start {
         font-size: 1.4rem;
       }
       hr {
-        width: 50px;
+        animation: widthAnimation 0.8s forwards;
         margin-bottom: 10px;
         margin-top: -10px;
         border-color: $themeBrown;
@@ -35,13 +35,16 @@ section.start {
       img {
         display: block;
         &.part1 {
-          transform: translate(103px, 15px);
+          transform: translate(135px, 0px);
         }
         &.part2 {
-          transform: translate(110px, 10px);
+          transform: translate(126px, 0px);
+        }
+        &.part3 {
+          transform: translate(0px);
         }
         &.part4 {
-          transform: translate(-50px, -5px);
+          transform: translate(-65px, 0px);
         }
       }
     }
@@ -67,5 +70,13 @@ section.start {
   }
   to {
     transform: translate3d(0, 20px, 0);
+  }
+}
+@keyframes widthAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
   }
 }
