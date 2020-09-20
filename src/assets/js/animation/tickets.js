@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import ScrollMagic from "scrollmagic";
 
 const tickets = document.querySelectorAll(".ticket-preview .ticket");
 const animationParms = {
@@ -52,3 +53,25 @@ for (const ticket of tickets) {
     gsap.fromTo(`img.${targetElement}`, animationParms[targetElement].from, animationParms[targetElement].to)
   })
 }
+
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+  triggerHook: 'onLeave',
+  triggerElement: "#tickets",
+  duration: 1,
+  offset: 0
+})
+.setPin("#tickets")
+.addTo(controller);
+
+scene.on("start", () => {
+  document.querySelector(".nav-tickets").classList.add("active");
+  document.querySelector(".nav-presentations").classList.remove("active");
+});
+scene.on("leave", (event) => {
+  if(event.scrollDirection === "REVERSE") {
+    document.querySelector(".nav-presentations").classList.add("active");
+    document.querySelector(".nav-tickets").classList.remove("active");
+  }
+});

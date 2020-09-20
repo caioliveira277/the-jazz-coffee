@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import ScrollMagic from "scrollmagic";
 
 const button = document.querySelector("#about .controls");
 
@@ -61,5 +62,27 @@ button.addEventListener("click", (event) => {
     })
     event.target.setAttribute("data-value", "one")
   }
-  
 })
+
+
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+  triggerHook: 'onLeave',
+  triggerElement: "#about",
+  duration: 1,
+  offset: 0
+})
+.setPin("#about")
+.addTo(controller);
+
+scene.on("start", () => {
+  document.querySelector(".nav-about").classList.add("active");
+  document.querySelector(".nav-tickets").classList.remove("active");
+});
+scene.on("leave", (event) => {
+  if(event.scrollDirection === "REVERSE") {
+    document.querySelector(".nav-tickets").classList.add("active");
+    document.querySelector(".nav-about").classList.remove("active");
+  }
+});

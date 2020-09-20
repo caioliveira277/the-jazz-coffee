@@ -86,3 +86,14 @@ const scene = new ScrollMagic.Scene({
 .setPin("#presentations")
 .setTween(tl)
 .addTo(controller);
+
+scene.on("start", () => {
+  document.querySelector(".nav-presentations").classList.add("active");
+  document.querySelector(".nav-start").classList.remove("active");
+});
+scene.on("leave", (event) => {
+  if(event.scrollDirection === "REVERSE") {
+    document.querySelector(".nav-start").classList.add("active");
+    document.querySelector(".nav-presentations").classList.remove("active");
+  }
+});

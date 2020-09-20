@@ -2,6 +2,8 @@ import { TimelineMax } from "gsap";
 import ScrollMagic from "scrollmagic";
 import "scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap";
 
+const start = document.querySelector("#start");
+
 const animationParams = {
   part1: {
     to: {
@@ -37,7 +39,6 @@ tl.to("#start .part2", animationParams.part2.to)
 tl.to("#start .part3", animationParams.part3.to)
 tl.to("#start .part4", animationParams.part4.to)
 
-
 const scene = new ScrollMagic.Scene({
   triggerHook: 'onLeave',
   triggerElement: "#start",
@@ -47,3 +48,12 @@ const scene = new ScrollMagic.Scene({
 .setPin("#start")
 .setTween(tl)
 .addTo(controller);
+
+scene.on("start", () => {
+  document.querySelector(".nav-start").classList.add("active");
+  document.querySelector(".nav-presentations").classList.remove("active");
+});
+scene.on("end", () => {
+  document.querySelector(".nav-start").classList.add("active");
+  document.querySelector(".nav-presentations").classList.remove("active");
+});
