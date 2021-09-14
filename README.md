@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+# The Jazz Coffee ☕
+## Projeto do 2° semestre de design - ***FATEC-SR***
 
-You can use the [editor on GitHub](https://github.com/caioliveira277/the_jazz_coffee/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<br>
+<p float="left">
+ <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white">
+ <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+ <img src="https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black">
+ <img src="https://img.shields.io/badge/green%20sock-88CE02?style=for-the-badge&logo=greensock&logoColor=white">
+</p>
+<br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Ideia 💡:
+Elaborar um projeto para um evento fictício de **JAZZ**
 
-### Markdown
+## Logotipos desenvolvidas: 🌟
+<img src="https://caioliveira277.github.io/the_jazz_coffee/public/assets/images/logotipos.svg">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Funcionalidades:
+- Animações com scroll;
+- Selecionar tickets;
+- Alterar slides pelo scroll;
 
-```markdown
-Syntax highlighted code block
+## Executando o projeto: 🚀
+Para executar e visualizar o projeto em **modo de desenvolvimento**, você precisará seguir as próximas etapas.
 
-# Header 1
-## Header 2
-### Header 3
+### Pré-requisitos:
+Abaixo estará listada as ferramentas necessárias para o funcionamento do projeto.
+- **NodeJS versão 14** <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/nodejs.svg" height="20" /><br>
+  [<ins>Guia de instalação NodeJS</ins>](https://nodejs.org/en/).
+  
+### Instalando dependencias:
+Execute o comando para instalar as dependencias do projeto.
+   ```sh
+   npm install
+   ```  
+  
+### Executando o projeto:
+Os scripts abaixo executam a compilação do projeto.
+   ```sh
+   npm run build
+   ```
+   ###### Comando para compilar o projeto
+   
+   <br>
+   
+   ```sh
+   npm run start:dev
+   ```
+   ###### Comando para executar o servidor de desenvolvimento webpack
 
-- Bulleted
-- List
+---
+## Links: 🌐
+***Projeto online GitHub Pages:***<br>
+[<ins>Link do projeto</ins>](https://caioliveira277.github.io/the_jazz_coffee/)
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/caioliveira277/the_jazz_coffee/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+---
+## Licença
+Este projeto está licenciado sob a licença [MIT] - consulte o arquivo LICENSE.md para obter detalhes
