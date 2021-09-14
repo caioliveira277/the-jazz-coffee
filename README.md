@@ -1,6 +1,8 @@
 # The Jazz Coffee ☕
 ## Projeto do 2° semestre de design - ***FATEC-SR***
 
+##### Aviso: Esse projeto não está responsivo 😑
+
 <br>
 <p float="left">
  <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white">
