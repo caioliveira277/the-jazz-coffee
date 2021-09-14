@@ -1,5 +1,5 @@
 # The Jazz Coffee ☕
-## Projeto do 2° semestre de design - ***FATEC-SR***
+## Projeto do 3° semestre de design - ***FATEC-SR***
 
 ##### Aviso: Esse projeto não está responsivo 😑
 
