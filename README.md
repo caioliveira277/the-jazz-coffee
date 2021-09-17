@@ -15,7 +15,7 @@
 ## Ideia 💡:
 Elaborar um projeto para um evento fictício de **JAZZ**
 
-## Logotipos desenvolvidas: 🌟
+## Logotipos desenvolvidos: 🌟
 <img src="https://caioliveira277.github.io/the_jazz_coffee/public/assets/images/logotipos.svg">
 
 ## Funcionalidades:
