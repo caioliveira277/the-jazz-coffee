@@ -54,7 +54,7 @@ Os scripts abaixo executam a compilação do projeto.
 ---
 ## Links: 🌐
 ***Projeto online GitHub Pages:***<br>
-[<ins>Link do projeto</ins>](https://caioliveira277.github.io/the_jazz_coffee/)
+[<ins>Link do projeto</ins>](https://caioliveira277.github.io/the-jazz-coffee/)
 
 ---
 ## Licença
